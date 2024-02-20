@@ -1,0 +1,89 @@
+basePath: /api/v1
+definitions:
+  main.ErrResponse:
+    properties:
+      detail:
+        type: string
+    type: object
+  main.Post:
+    properties:
+      content:
+        type: string
+      id:
+        type: integer
+      title:
+        type: string
+    required:
+    - content
+    - title
+    type: object
+  main.PostListResponse:
+    properties:
+      posts:
+        items:
+          $ref: '#/definitions/main.Post'
+        type: array
+    type: object
+info:
+  contact: {}
+  title: ExampleWebAPI
+  version: "1.0"
+paths:
+  /posts:
+    get:
+      consumes:
+      - application/json
+      description: get posts
+      parameters:
+      - description: limit
+        in: query
+        name: limit
+        type: integer
+      - description: offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.PostListResponse'
+        "500":
+          description: internal server error
+          schema:
+            $ref: '#/definitions/main.ErrResponse'
+      summary: Get List of Posts
+      tags:
+      - posts
+    post:
+      consumes:
+      - application/json
+      description: add post
+      parameters:
+      - description: Post
+        in: body
+        name: post
+        required: true
+        schema:
+          $ref: '#/definitions/main.Post'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: created
+          schema:
+            $ref: '#/definitions/main.Post'
+        "400":
+          description: invalid params
+          schema:
+            $ref: '#/definitions/main.ErrResponse'
+        "500":
+          description: internal server error
+          schema:
+            $ref: '#/definitions/main.ErrResponse'
+      summary: Create new post
+      tags:
+      - posts
+swagger: "2.0"
