@@ -30,7 +30,7 @@ func main() {
 		log.Fatalf("Error creating request adapter: %v\n", err)
 	}
 
-	adapter.SetBaseUrl("kiotaHttp://localhost:8080/api/v1")
+	adapter.SetBaseUrl("http://localhost:8080/api/v1")
 
 	apiClient := client.NewApiClient(adapter)
 
