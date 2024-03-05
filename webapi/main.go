@@ -26,8 +26,8 @@ type ErrResponse struct {
 	Detail string `json:"detail"`
 }
 
-// @title           ExampleWebAPI
-// @version         1.0
+// @title    ExampleWebAPI
+// @version  1.0
 // @BasePath /api/v1
 
 // GetPosts

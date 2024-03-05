@@ -2,7 +2,7 @@
   "descriptionHash": "B1C86C7F26438D9C5B2464139E1BAB54702E3F809DE31991804FC0DCCF2F44AA6F8BB4901A3D0F26EE07D2D57C01E161C7F92E694B4B1423DD9D4E985150722A",
   "descriptionLocation": "../webapi/docs/swagger.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.11.0",
+  "kiotaVersion": "1.11.1",
   "clientClassName": "ApiClient",
   "clientNamespaceName": "github.com/pistatium/kiota_example/client",
   "language": "Go",
